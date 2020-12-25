@@ -14,4 +14,4 @@ const prepareSessionOptions = async () => {
   };
 };
 
-export default prepareSessionOptions;
+module.exports = prepareSessionOptions;

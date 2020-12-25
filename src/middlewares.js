@@ -4,13 +4,13 @@ const prepareSessionOptions = require('./prepareSessionOptions');
 const getShopifyToken = require('./getShopifyToken');
 const { removeProperties } = require('./helpers');
 
-export const sessionMiddleware = async (req, res, next) => {
+const sessionMiddleware = async (req, res, next) => {
   const options = await prepareSessionOptions();
   await applySession(req, res, options);
   next();
 };
 
-export const installMiddleware = async (req, res, next) => {
+const installMiddleware = async (req, res, next) => {
   if (req.query.fn === 'install') {
     const { shop } = req.query;
     if (!shop || !shop.includes('.myshopify.com')) {
@@ -37,7 +37,7 @@ export const installMiddleware = async (req, res, next) => {
   }
 };
 
-export const redirectMiddleware = async (req, res, next) => {
+const redirectMiddleware = async (req, res, next) => {
   if (req.query.fn === 'redirect') {
     const { code, hmac, shop, state } = req.query;
     const nonce = req.session.nonce;
@@ -73,7 +73,7 @@ export const redirectMiddleware = async (req, res, next) => {
   }
 };
 
-export const urlMiddleware = async (req, res, next) => {
+const urlMiddleware = async (req, res, next) => {
   if (
     !req.redirectUrl ||
     (req.query.fn !== 'install' && req.query.fn !== 'redirect')
@@ -82,3 +82,8 @@ export const urlMiddleware = async (req, res, next) => {
   }
   next();
 };
+
+exports.sessionMiddleware = sessionMiddleware;
+exports.installMiddleware = installMiddleware;
+exports.redirectMiddleware = redirectMiddleware;
+exports.urlMiddleware = urlMiddleware;
