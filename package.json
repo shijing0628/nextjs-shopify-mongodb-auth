@@ -4,7 +4,7 @@
   "description": "help to develop shopify app with next.js framework, using API Routes instead of custom server",
   "author": "Qixuan Hong",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "webpack"
   },
