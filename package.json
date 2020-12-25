@@ -1,0 +1,25 @@
+{
+  "name": "nextjs-shopify-mongodb-auth",
+  "version": "0.0.1",
+  "description": "help to develop shopify app with next.js framework, using API Routes instead of custom server",
+  "author": "Qixuan Hong",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "aws4": "^1.11.0",
+    "axios": "^0.21.1",
+    "connect-mongo": "^3.2.0",
+    "mongodb-client-encryption": "^1.1.0",
+    "mongoose": "^5.11.8",
+    "next-session": "^3.4.0",
+    "react": "^17.0.1",
+    "shopify-api-node": "^3.6.0",
+    "shopify-token": "^4.0.0"
+  }
+}
