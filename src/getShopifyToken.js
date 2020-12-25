@@ -1,4 +1,4 @@
-import ShopifyToken from 'shopify-token';
+const ShopifyToken = require('shopify-token');
 
 const getShopifyToken = (req, res) => {
   const {
@@ -20,4 +20,4 @@ const getShopifyToken = (req, res) => {
   return shopifyToken;
 };
 
-export default getShopifyToken;
+module.exports = getShopifyToken;

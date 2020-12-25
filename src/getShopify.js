@@ -1,6 +1,6 @@
-import { applySession } from 'next-session';
-import prepareSessionOptions from './prepareSessionOptions';
-import Shopify from 'shopify-api-node';
+const { applySession } = require('next-session');
+const prepareSessionOptions = require('./prepareSessionOptions');
+const Shopify = require('shopify-api-node');
 
 const getShopify = async (ctx) => {
   const { req, res, resolvedUrl } = ctx;
@@ -52,4 +52,4 @@ const getShopify = async (ctx) => {
   return shopify;
 };
 
-export default getShopify;
+module.exports = getShopify;
