@@ -1,8 +1,8 @@
-import axios from 'axios';
-import { applySession } from 'next-session';
-import prepareSessionOptions from './prepareSessionOptions';
-import getShopifyToken from './getShopifyToken';
-import { removeProperties } from './helpers';
+const axios = require('axios');
+const { applySession } = require('next-session');
+const prepareSessionOptions = require('./prepareSessionOptions');
+const getShopifyToken = require('./getShopifyToken');
+const { removeProperties } = require('./helpers');
 
 export const sessionMiddleware = async (req, res, next) => {
   const options = await prepareSessionOptions();

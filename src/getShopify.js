@@ -1,8 +1,7 @@
-const { applySession } = require('next-session');
-const prepareSessionOptions = require('./prepareSessionOptions');
-const Shopify = require('shopify-api-node');
-
 const getShopify = async (ctx) => {
+  const { applySession } = require('next-session');
+  const prepareSessionOptions = require('./prepareSessionOptions');
+  const Shopify = require('shopify-api-node');
   const { req, res, resolvedUrl } = ctx;
   const options = await prepareSessionOptions();
   await applySession(req, res, options);

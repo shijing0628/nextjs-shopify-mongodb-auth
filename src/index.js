@@ -5,9 +5,11 @@ const {
   sessionMiddleware,
   urlMiddleware,
 } = require('./middlewares');
-const nextGetShopify = getShopify;
-nextGetShopify.installMiddleware = installMiddleware;
-nextGetShopify.redirectMiddleware = redirectMiddleware;
-nextGetShopify.sessionMiddleware = sessionMiddleware;
-nextGetShopify.urlMiddleware = urlMiddleware;
-module.exports = nextGetShopify;
+
+module.exports = {
+  getShopify,
+  installMiddleware,
+  redirectMiddleware,
+  sessionMiddleware,
+  urlMiddleware,
+};

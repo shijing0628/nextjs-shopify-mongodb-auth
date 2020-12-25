@@ -1,6 +1,6 @@
 {
   "name": "nextjs-shopify-mongodb-auth",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "help to develop shopify app with next.js framework, using API Routes instead of custom server",
   "author": "Qixuan Hong",
   "license": "MIT",

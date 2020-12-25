@@ -1,8 +1,7 @@
-import { expressSession } from 'next-session';
-import connectMongo from 'connect-mongo';
-import connectDB from './connectDB';
-
 const prepareSessionOptions = async () => {
+  const { expressSession } = require('next-session');
+  const connectMongo = require('connect-mongo');
+  const connectDB = require('./connectDB');
   const { mongooseConnection } = await connectDB();
   const MongoStore = connectMongo(expressSession);
   return {

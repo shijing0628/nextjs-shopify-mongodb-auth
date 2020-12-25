@@ -1,5 +1,3 @@
-const ShopifyToken = require('shopify-token');
-
 const getShopifyToken = (req, res) => {
   const {
     SHOPIFY_APP_CLIENT_SECRET: sharedSecret,
@@ -9,6 +7,7 @@ const getShopifyToken = (req, res) => {
     SHOPIFY_APP_GET_ACCESS_TOKEN_TIMEOUT: timeout,
     SHOPIFY_APP_ACCESS_MODE: accessMode,
   } = process.env;
+  const ShopifyToken = require('shopify-token');
   const shopifyToken = new ShopifyToken({
     sharedSecret,
     apiKey,
